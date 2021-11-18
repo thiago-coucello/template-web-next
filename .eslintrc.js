@@ -56,6 +56,8 @@ module.exports = {
           // Import Sort
           "simple-import-sort/imports": "warn",
           "simple-import-sort/exports": "warn",
+          "max-len": ["error", {"code": 80, "ignoreUrls": true}],
+          "no-duplicate-imports": ["error", {"includeExports": true}],
         },
       },
     ],
