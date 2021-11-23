@@ -1,14 +1,20 @@
+import { ChakraProvider, Flex } from "@chakra-ui/react";
 import type { AppProps } from "next/app";
 import React from "react";
-import { ChakraProvider } from "@chakra-ui/react";
-import { theme } from "../styles/theme";
-import Header from "../components/Header";
 
-function MyApp({ Component, pageProps }: AppProps) {
+import Header from "../components/Header";
+import { AuthProvider } from "../context/Auth/provider";
+import { theme } from "../styles/theme";
+
+function MyApp({ Component, pageProps }: AppProps): JSX.Element {
   return (
     <ChakraProvider theme={theme}>
-      <Header/>
-      <Component {...pageProps} />
+      <AuthProvider>
+        <Header />
+        <Flex grow={1} minH={"calc(100vh - 10rem)"}>
+          <Component {...pageProps} />
+        </Flex>
+      </AuthProvider>
     </ChakraProvider>
   );
 }

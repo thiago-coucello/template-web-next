@@ -2,7 +2,7 @@ import { Img } from "@chakra-ui/react";
 import NextLink from "next/link";
 import React, { ReactElement } from "react";
 
-export default function Logo(): ReactElement {
+export function Logo(): ReactElement {
   return (
     <NextLink href={"/"}>
       <Img

@@ -16,7 +16,7 @@ import { DrawerFooter, Flex, Switch } from "@chakra-ui/react";
 import React, { ReactElement } from "react";
 import { FaMoon, FaSun } from "react-icons/fa";
 
-export default function UserMenu(): ReactElement {
+export function UserMenu(): ReactElement {
   const { colorMode, toggleColorMode } = useColorMode();
   const { onOpen, isOpen, onClose } = useDisclosure();
 
